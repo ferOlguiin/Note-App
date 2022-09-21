@@ -1,0 +1,104 @@
+.colorFondo{
+  background: linear-gradient(to right,#4568dc,#b06ab3);
+  min-height: 100vh;
+}
+
+.btn-white{
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  color: rgb(206, 134, 0);
+  padding: 6px 12px;
+  box-shadow: 1px 1px 2px rgb(206, 134, 0);
+  border: none;
+  font-weight: bold;
+}
+.btn-white:hover{
+  background-color: rgb(206, 134, 0);
+  color: white;
+}
+
+.btn-yellow{
+  background-color: rgb(138, 32, 251);
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 6px 12px;
+  border: none;
+  box-shadow: 1px 1px 2px white;
+  border-radius: 0.375rem;
+  font-weight: bold;
+}
+.btn-yellow:hover{
+  background-color: rgb(93, 21, 170);
+  color: rgb(255, 255, 255);
+}
+
+.btn-green{
+  background-color: rgb(7, 166, 50);
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 6px 12px;
+  border: none;
+  box-shadow: 1px 1px 2px white;
+  border-radius: 0.375rem;
+  font-weight: bold;
+}
+.btn-green:hover{
+  background-color: rgb(0, 141, 38);
+  color: rgb(255, 255, 255)
+}
+.btn-red{
+  background-color: rgb(199, 2, 2);
+  text-align: center;
+  text-decoration: none;
+  color: rgb(209, 209, 209);
+  padding: 6px 12px;
+  border: none;
+  box-shadow: 1px 1px 2px white;
+  border-radius: 0.375rem;
+  font-weight: bold;
+}
+.btn-red:hover{
+  background-color: rgb(127, 2, 2);
+  color: rgb(255, 255, 255)
+}
+
+.glaseado {
+  background-color: #ffffff23;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 12px;
+}
+.glaseado-form {
+  background-color: #1514143b;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 12px;
+}
+
+.textfooter{
+  font-size: 12px;
+}
+
+.textTarea{
+  font-size: 14px;
+}
+
+.imgNote{
+  background-image: url(./images/oldNote2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fav{
+  position: absolute;
+  left: 85%;
+  top: -4%;
+  box-shadow: 1px 2px 9px black;
+}
+
+.fav-Tarea{
+  box-shadow: 1px 2px 9px black;
+}
