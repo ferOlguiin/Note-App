@@ -12,6 +12,7 @@ export const VerTareas = () => {
   const {user} = useAuth0();
   const fav = true;
   console.log(task)
+  console.log(user)
   useEffect(() => {
     obtenerTareas(idUser);
 }, [idUser])
