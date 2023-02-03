@@ -29,24 +29,10 @@ export const VerTareas = () => {
 
         <div className='container pb-5 mt-1'>
           <div className='row g-2 p-2 mt-2 mb-4'>
-            <h3 className="text-warning fw-bold">Tus favoritas</h3>
-            {
-              task.length > 0 ? task.map((item) => {
-                if(item.fav > 0){
-                  return <TaskCard item={item} key={item._id} fav={fav}/>
-                }
-              }) : <p className='text-white'>Aún no has marcado ninguna nota como favorita</p>
-            }
+            
           </div>
           <div className='row g-2 p-2'>
-            <h3 className='text-white fw-bold'>Notas</h3>
-          {
-            task.length > 0 ? task.map((item) => {
-              if(item.fav <= 0){
-                return <TaskCard item={item} key={item._id}/>
-              }
-            }) : <p className='text-white'>Aún no has agregado notas</p>
-          }
+            
           </div>
         </div>
 
