@@ -1,4 +1,9 @@
 import Tarea from "../models/Tarea.js";
+import { PORT } from "../config.js";
+
+export const welcome = (req, res) => {
+    return res.send("Bienvenido usted se encuentra en el puerto: " + PORT);
+}
 
 export const obtenerTarea = async (req, res) => {
     try {

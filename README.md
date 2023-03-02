@@ -4,11 +4,12 @@ Hola compañero/a programador/a para el caso en el que clones esta repositorio n
 -PORT
 -REACT_APP_AUTH_DOMAIN
 -REACT_APP_AUTH_CLIENT_ID
+-REACT_APP_API_BASE_URL
 
 con estas variables ya estaria funcionando.
 
 Este proyecto fue realizado con REACT, NODE, EXPRESS y MONGODB màs los paquetes necesarios para el correcto desarrollo.
 
-Puedes visitar la app en el siguiente enlace: https://note-app-mernproyect.herokuapp.com/
+Puedes visitar la app en el siguiente enlace: 
 
 Espero te sea de utilidad, saludos!
