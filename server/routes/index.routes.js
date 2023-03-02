@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea } from "../controllers/routes.controllers.js";
+import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea, welcome } from "../controllers/routes.controllers.js";
 
 const router = Router();
 
+router.get("/", welcome);
 router.get("/tareas/:id", obtenerTarea);
 router.get("/tarea/:id", obtenerUnaTarea);
 router.post("/creartarea", crearTarea);
