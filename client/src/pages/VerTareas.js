@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import TaskCard from '../components/TaskCard';
 import {useTarea} from '../context/tareaContext';
 import {IoAdd, IoReturnUpBack} from 'react-icons/io5';
-import Spinner from '../components/Spinner';
+import {Spinner} from '../components/Spinner';
 
 export const VerTareas = () => {
     
