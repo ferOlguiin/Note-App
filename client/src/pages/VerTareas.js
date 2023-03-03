@@ -32,22 +32,22 @@ export const VerTareas = () => {
           <div className='row g-2 p-2 mt-2 mb-4'>
             <h3 className="text-warning fw-bold">Tus favoritas</h3>
             {
-              task.length > 0 ? task.map((item) => {
+              loading === true ? <Spinner/> : task.length > 0 ? task.map((item) => {
                 if(item.fav > 0){
                   return <TaskCard item={item} key={item._id} fav={fav}/>
                 }
-              }) : task.length === 0 ? <p className='text-white'>Aún no has marcado ninguna nota como favorita</p> : <Spinner/>
+              }) : <p className='text-white'>Aún no has marcado ninguna nota como favorita</p>
             }
 
           </div>
           <div className='row g-2 p-2'>
             <h3 className='text-white fw-bold'>Notas</h3>
           {
-            task.length > 0 ? task.map((item) => {
+            loading === true ? <Spinner/> : task.length > 0 ? task.map((item) => {
               if(item.fav <= 0){
                 return <TaskCard item={item} key={item._id}/>
               }
-            }) : task.length === 0 ? <p className='text-white'>Aún no has agregado notas</p> : <Spinner/>
+            }) : <p className='text-white'>Aún no has agregado notas</p>
           }
           </div>
         </div>
