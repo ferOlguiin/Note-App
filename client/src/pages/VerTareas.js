@@ -14,8 +14,16 @@ export const VerTareas = () => {
   const fav = true;
     
   useEffect(() => {
-    obtenerTareas(idUser);
-    setLoading(false);
+    (async() => {
+      setLoading(true);
+      try {
+        await obtenerTareas(idUser);
+        setLoading(false);
+      } catch (error) {
+        console.log(error)
+        setLoading(false);
+      }
+    })()
 }, [idUser])
 
   return (
@@ -37,7 +45,7 @@ export const VerTareas = () => {
                 if(item.fav > 0){
                   return <TaskCard item={item} key={item._id} fav={fav}/>
                 }
-              }) : <p className='text-white'>Aún no has marcado ninguna nota como favorita</p>
+              }) : <p className='text-white'>No se encontraron notas marcadas como favoritas.</p>
             }
 
           </div>
@@ -48,7 +56,7 @@ export const VerTareas = () => {
               if(item.fav <= 0){
                 return <TaskCard item={item} key={item._id}/>
               }
-            }) : <p className='text-white'>Aún no has agregado notas</p>
+            }) : <p className='text-white'>No has agregado ninguna nota todavia. Prueba creando una.</p>
           }
           </div>
         </div>
