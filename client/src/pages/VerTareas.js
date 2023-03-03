@@ -35,7 +35,9 @@ export const VerTareas = () => {
                 if(item.fav > 0){
                   return <TaskCard item={item} key={item._id} fav={fav}/>
                 }
-              }) : <p className='text-white'>Aún no has marcado ninguna nota como favorita</p>
+              }) : task.length === 0 ? <p className='text-white'>Aún no has marcado ninguna nota como favorita</p> : <div className="spinner-border text-primary d-flex justify-content-center align-items-center" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
             }
 
           </div>
