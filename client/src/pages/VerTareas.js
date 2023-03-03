@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import TaskCard from '../components/TaskCard';
 import {useTarea} from '../context/tareaContext';
@@ -8,13 +8,14 @@ import {Spinner} from '../components/Spinner';
 
 export const VerTareas = () => {
     
-  
+  const [loading, setLoading] = useState(true);
   const {task, obtenerTareas, idUser} = useTarea();
   const {user} = useAuth0();
   const fav = true;
     
   useEffect(() => {
     obtenerTareas(idUser);
+    setLoading(false);
 }, [idUser])
 
   return (
