@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TaskCard from '../components/TaskCard';
 import {useTarea} from '../context/tareaContext';
 import {IoAdd, IoReturnUpBack} from 'react-icons/io5';
+import Spinner from '../components/Spinner';
 
 export const VerTareas = () => {
     
@@ -35,9 +36,7 @@ export const VerTareas = () => {
                 if(item.fav > 0){
                   return <TaskCard item={item} key={item._id} fav={fav}/>
                 }
-              }) : task.length === 0 ? <p className='text-white'>Aún no has marcado ninguna nota como favorita</p> : <div className="spinner-border text-primary d-flex justify-content-center align-items-center" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
+              }) : task.length === 0 ? <p className='text-white'>Aún no has marcado ninguna nota como favorita</p> : <Spinner/>
             }
 
           </div>
@@ -48,7 +47,7 @@ export const VerTareas = () => {
               if(item.fav <= 0){
                 return <TaskCard item={item} key={item._id}/>
               }
-            }) : <p className='text-white'>Aún no has agregado notas</p>
+            }) : task.length === 0 ? <p className='text-white'>Aún no has agregado notas</p> : <Spinner/>
           }
           </div>
         </div>
