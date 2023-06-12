@@ -13,6 +13,7 @@ export const Homepage = () => {
     <div className="vh-100 d-flex justify-content-center align-items-center flex-column text-white">
       <h1 className="fw-bold display-4 text-center">Note-App</h1>
       <p className="fs-5 text-center">Para guardar de manera rápida lo que encuentres útil al momento de navegar</p>
+      <p className="fs-6 text-center">Probá la app con "admin@gmail.com - 123456dIHDA"</p>
       
       {
         user ? '' : <LoginButton/>
