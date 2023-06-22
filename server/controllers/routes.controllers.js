@@ -1,5 +1,6 @@
 import Tarea from "../models/Tarea.js";
 import { PORT } from "../config.js";
+import nodemailer from 'nodemailer';
 
 export const welcome = (req, res) => {
     return res.send("Bienvenido usted se encuentra en el puerto: " + PORT);
@@ -72,3 +73,32 @@ export const obtenerUnaTarea = async (req, res) => {
 
 }
 
+
+export const sendMail = async (req, res) => {
+    const {name, email, phone, info, emailAdmin, emailPassAdmin} = req.body;
+    const message = {
+        from: email,
+        to: emailAdmin,
+        subject: `${name} te ha escrito desde la web`,
+        text: `El usuario ${name}, con email ${email}, ${info ? `les ha dejado el siguiente mensaje: "${info}"` : "No dejo un mensaje, solo dejo sus contactos para que lo comuniquen."}. ${phone ? `El telefono que dejo este usuario es ${phone}` : "Este usuario no dejo ningún teléfono de contacto."}`
+    };
+
+    const config = {
+        service : "gmail",
+        host: 'smtp.gmail.com',
+        port : 587,
+        auth : {
+            user: emailAdmin,
+            pass: emailPassAdmin
+        }
+    };
+
+    const transport = nodemailer.createTransport(config);
+    const mailInfo = await transport.sendMail(message);
+
+    if(mailInfo.messageId){
+        return res.send(mailInfo);
+    } else {
+        return res.status(400).send("No se pudo enviar el mail correctamente");
+    }
+}
