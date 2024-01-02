@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea, sendMail, welcome } from "../controllers/routes.controllers.js";
+import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea, sendMail, sendMailLanding, welcome } from "../controllers/routes.controllers.js";
 
 const router = Router();
 
@@ -10,6 +10,7 @@ router.post("/creartarea", crearTarea);
 router.put("/editar/:id", editarTarea);
 router.delete("/borrar/:id", borrarTarea);
 router.post("/mail", sendMail);
+router.post("/somosagenciaocho", sendMailLanding);
 
 
 export default router;

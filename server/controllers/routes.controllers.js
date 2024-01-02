@@ -102,3 +102,49 @@ export const sendMail = async (req, res) => {
         return res.status(400).send("No se pudo enviar el mail correctamente");
     }
 }
+
+export const sendMailLanding = async (req, res) => {
+    const {name, email, phone, emailAdmin, emailPassAdmin} = req.body;
+    const message = {
+        from: email,
+        to: emailAdmin,
+        subject: `${name}`,
+        html: `<!DOCTYPE html>
+        <html lang="es">
+              <head>
+                <title>Usuario nuevo en Somos Agencia Ocho</title>
+              </head>
+              <body style="margin-bottom:20px; margin-top:20px">
+                <header>
+                  <img src="https://res.cloudinary.com/dcxzb95px/image/upload/v1702311105/stackMERN/fri4iwe6wcvr2bi5sje4.png" alt="agencia ocho" width="200px">
+                </header>
+                <main>
+                  <h1>Datos de Somos Agencia ocho"</h1>
+                  <p style="font-size:18px">Un usuario acaba de dejar los siguientes datos para poder ver el VSL de la landing page:</p>
+                  <p style="font-size:18px"><b>Nombre:</b> ${name}</p>
+                  <p style="font-size:18px"><b>Correo electrónico:</b> ${password}</p>
+                  <p style="font-size:18px"><b>Teléfono:</b> ${phone}</p>
+                </main>
+              </body>
+            </html>`
+    };
+
+    const config = {
+        service : "gmail",
+        host: 'smtp.gmail.com',
+        port : 587,
+        auth : {
+            user: emailAdmin,
+            pass: emailPassAdmin
+        }
+    };
+
+    const transport = nodemailer.createTransport(config);
+    const mailInfo = await transport.sendMail(message);
+
+    if(mailInfo.messageId){
+        return res.send(mailInfo);
+    } else {
+        return res.status(400).send("No se pudo enviar el mail correctamente");
+    }
+}
