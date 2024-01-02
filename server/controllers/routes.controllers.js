@@ -122,7 +122,7 @@ export const sendMailLanding = async (req, res) => {
                   <h1>Datos de Somos Agencia ocho"</h1>
                   <p style="font-size:18px">Un usuario acaba de dejar los siguientes datos para poder ver el VSL de la landing page:</p>
                   <p style="font-size:18px"><b>Nombre:</b> ${name}</p>
-                  <p style="font-size:18px"><b>Correo electrónico:</b> ${password}</p>
+                  <p style="font-size:18px"><b>Correo electrónico:</b> ${email}</p>
                   <p style="font-size:18px"><b>Teléfono:</b> ${phone}</p>
                 </main>
               </body>
