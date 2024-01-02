@@ -108,7 +108,7 @@ export const sendMailLanding = async (req, res) => {
     const message = {
         from: email,
         to: emailAdmin,
-        subject: `${name}`,
+        subject: `${name} envió sus datos en SomosAgenciaOcho para ver el VSL`,
         html: `<!DOCTYPE html>
         <html lang="es">
               <head>
@@ -119,8 +119,8 @@ export const sendMailLanding = async (req, res) => {
                   <img src="https://res.cloudinary.com/dcxzb95px/image/upload/v1702311105/stackMERN/fri4iwe6wcvr2bi5sje4.png" alt="agencia ocho" width="200px">
                 </header>
                 <main>
-                  <h1>Datos de Somos Agencia ocho"</h1>
-                  <p style="font-size:18px">Un usuario acaba de dejar los siguientes datos para poder ver el VSL de la landing page:</p>
+                  <h1>Datos enviados a través del formulario inicial de SomosAgenciaOcho</h1>
+                  <p style="font-size:18px">${name} acaba de dejar los siguientes datos para poder ver el VSL de la landing page:</p>
                   <p style="font-size:18px"><b>Nombre:</b> ${name}</p>
                   <p style="font-size:18px"><b>Correo electrónico:</b> ${email}</p>
                   <p style="font-size:18px"><b>Teléfono:</b> ${phone}</p>
