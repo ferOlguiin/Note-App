@@ -163,10 +163,10 @@ export const sendMailOlivos = async (req, res) => {
               </head>
               <body style="margin-bottom:20px; margin-top:20px">
                 <header>
-                  <h1 style="font-weight:bold; font-size:45px">Olivos de Arauco Multiespacio</h1>
+                  <h1 style="font-weight:bold; font-size:45px; color:#4d5d44">Olivos de Arauco Multiespacio</h1>
                 </header>
                 <main>
-                  <h2 style="margin-top:30px">${name} ha dejado los siguientes datos a través del formulario</h2>
+                  <h2 style="margin-top:30px; text-decoration:underline;">${name} ha dejado los siguientes datos a través del formulario</h2>
                   <p style="font-size:17px"><b>Nombre completo:</b> ${name}</p>
                   <p style="font-size:17px"><b>Email:</b> ${email}</p>
                   <p style="font-size:17px"><b>Teléfono:</b> ${phone}</p>
