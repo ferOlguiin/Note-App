@@ -148,3 +148,51 @@ export const sendMailLanding = async (req, res) => {
         return res.status(400).send("No se pudo enviar el mail correctamente");
     }
 }
+
+
+export const sendMailOlivos = async (req, res) => {
+    const {name, email, phone, info, country, emailAdmin, emailPassAdmin} = req.body;
+    const message = {
+        from: email,
+        to: emailAdmin,
+        subject: `${name} escribió desde el formulario de la web`,
+        html: `<!DOCTYPE html>
+        <html lang="es">
+              <head>
+                <title>Nuevo contacto en Olivos-Arauco</title>
+              </head>
+              <body style="margin-bottom:20px; margin-top:20px">
+                <header>
+                  <h1 style="font-weight:bold">Olivos de Arauco Multiespacio</h1>
+                </header>
+                <main>
+                  <h3>${name} ha dejado los siguientes datos</h3>
+                  <p style="font-size:18px"><b>Nombre completo:</b> ${name}</p>
+                  <p style="font-size:18px"><b>Email:</b> ${email}</p>
+                  <p style="font-size:18px"><b>Teléfono:</b> ${phone}</p>
+                  <p style="font-size:18px"><b>Nacionalidad:</b> ${country}</p>
+                  <p style="font-size:18px"><b>Mensaje:</b> ${info}</p>
+                </main>
+              </body>
+            </html>`
+    };
+
+    const config = {
+        service : "gmail",
+        host: 'smtp.gmail.com',
+        port : 587,
+        auth : {
+            user: emailAdmin,
+            pass: emailPassAdmin
+        }
+    };
+
+    const transport = nodemailer.createTransport(config);
+    const mailInfo = await transport.sendMail(message);
+
+    if(mailInfo.messageId){
+        return res.send(mailInfo);
+    } else {
+        return res.status(400).send("No se pudo enviar el mail correctamente");
+    }
+}
