@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea, sendMail, sendMailLanding, sendMailOlivos, welcome } from "../controllers/routes.controllers.js";
+import { borrarTarea, crearTarea, editarTarea, obtenerTarea, obtenerUnaTarea, sendMail, sendMailIntegral, sendMailLanding, sendMailOlivos, welcome } from "../controllers/routes.controllers.js";
 
 const router = Router();
 
@@ -12,6 +12,7 @@ router.delete("/borrar/:id", borrarTarea);
 router.post("/mail", sendMail);
 router.post("/somosagenciaocho", sendMailLanding);
 router.post("/mailolivos", sendMailOlivos);
+router.post("/sendintegral", sendMailIntegral);
 
 
 export default router;
